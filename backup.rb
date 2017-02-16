@@ -31,7 +31,7 @@ class ZFSDatasetManager
       latest = to
     end
 
-    local_snapshots.each do |s|
+    local_snapshots.drop(1).each do |s|
       ts = s.split("@")[-1]
       break if ts >= latest
 
