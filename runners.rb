@@ -11,7 +11,7 @@ end
 class LocalRunner < Runner
   def run(cmd)
     out, err, code = Open3.capture3("#{cmd}")
-    raise CommandRuntimeError, "[#{@host}] #{err}" unless code == 0
+    raise CommandRuntimeError, "[local] #{err}" unless code == 0
     return out
   end
 end
